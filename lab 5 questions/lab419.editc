@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int main(){
+    int m[10][10];
+    int temp;
+    int r, c;
+
+    // Input number of rows and columns
+    printf("Enter number of rows: ");
+    scanf("%d", &r);
+    printf("Enter number of columns: ");
+    scanf("%d", &c);
+
+    // Input matrix values
+    int i, j;
+    for(i = 0; i < r; i++){
+        for(j = 0; j < c; j++){
+            printf("Enter value of m[%d][%d]: ", i, j);
+            scanf("%d", &m[i][j]);
+        }
+    }
+
+    // Display the matrix before sorting
+    printf("Matrix before sorting:\n");
+    for(i = 0; i < r; i++){
+        for(j = 0; j < c; j++){
+            printf("%d  ", m[i][j]);
+        }
+        printf("\n");
+    }
+
+    // Sorting each row using bubble sort
+    for(i = 0; i < r; i++){
+        for(j = 0; j < c - 1; j++){
+            for(int k = 0; k < c - j - 1; k++){
+                if(m[i][k] > m[i][k+1]){
+                    temp = m[i][k];
+                    m[i][k] = m[i][k+1];
+                    m[i][k+1] = temp;
+                }
+            }
+        }
+    }
+
+    // Display the matrix after sorting
+    printf("Matrix after sorting rows:\n");
+    for(i = 0; i < r; i++){
+        for(j = 0; j < c; j++){
+            printf("%d  ", m[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}

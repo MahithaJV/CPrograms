@@ -1,0 +1,21 @@
+# include <stdio.h>
+# include <stdlib.h>
+int main(){
+int sum=0,avg,*n;
+n=(int*)malloc(20);
+if (n == NULL) { // Check if memory allocation was successful
+        printf("Memory allocation failed!\n");
+        return 1;
+}
+int i;
+for(i=0;i<5;i++){
+    printf("enter numbers");
+    scanf("%d",&n[i]);
+}
+for(i=0;i<5;i++){
+    sum=sum+n[i];
+
+}
+printf("sum is %d",sum);
+return 0;
+}

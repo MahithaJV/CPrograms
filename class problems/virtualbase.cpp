@@ -28,7 +28,7 @@ public:
     }
 };
 
-class student : virtual public person {
+class student :virtual person {
 protected:
     string studentid;
     string course;
